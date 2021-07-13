@@ -380,8 +380,8 @@ export class NoSqlQueryBuilderClass<DocType> {
     }
 
     toJSON(): {
-        query: MangoQuery<DocType>,
-        path?: string
+        query: MangoQuery<DocType>;
+        path?: string;
     } {
         const query: MangoQuery<DocType> = {
             selector: this._conditions,

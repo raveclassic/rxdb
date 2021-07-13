@@ -125,12 +125,12 @@ export type PouchChangeRow = {
     seq: number;
     deleted?: true;
     changes: {
-        rev: 'string'
-    }[],
+        rev: 'string';
+    }[];
     /**
      * only if include_docs === true
      */
-    doc?: PouchChangeDoc
+    doc?: PouchChangeDoc;
 }
 
 export type PouchAttachmentMeta = {
@@ -170,7 +170,7 @@ export type PouchChangeDoc = {
      */
     _deleted?: boolean;
     _attachments: {
-        [attachmentId: string]: PouchAttachmentMeta
+        [attachmentId: string]: PouchAttachmentMeta;
     };
 }
 
@@ -181,7 +181,7 @@ export type WithAttachments<Data> = Data & {
      * we do NOT have an empty object.
      */
     _attachments?: {
-        [attachmentId: string]: PouchAttachmentMeta
+        [attachmentId: string]: PouchAttachmentMeta;
     };
 }
 export type WithAttachmentsData<Data> = Data & {
@@ -191,7 +191,7 @@ export type WithAttachmentsData<Data> = Data & {
      * we do NOT have an empty object.
      */
     _attachments?: {
-        [attachmentId: string]: PouchAttachmentWithData
+        [attachmentId: string]: PouchAttachmentWithData;
     };
 }
 
@@ -199,7 +199,7 @@ export type WithAttachmentsData<Data> = Data & {
 export type WithPouchMeta<Data> = Data & {
     _rev: string;
     _attachments?: {
-        [attachmentId: string]: PouchAttachmentMeta
+        [attachmentId: string]: PouchAttachmentMeta;
     };
     _deleted?: boolean;
 }
@@ -219,7 +219,7 @@ export type PouchDbSorting = (string | string[] | { [k: string]: 'asc' | 'desc' 
 // this is not equal to the standard MangoQuery
 // because of different sorting
 export type PouchdbQuery = MangoQuery & {
-    sort?: PouchDbSorting
+    sort?: PouchDbSorting;
 };
 
 export type PouchBulkDocResultRow = {
@@ -281,7 +281,7 @@ export declare class PouchDBInstance {
 
 
     find<DocumentData>(mangoQuery: PouchdbQuery): Promise<{
-        docs: WithPouchMeta<DocumentData>[]
+        docs: WithPouchMeta<DocumentData>[];
     }>;
     compact(options?: any): Promise<any>;
     destroy(options?: any): Promise<void>;
@@ -289,7 +289,7 @@ export declare class PouchDBInstance {
         docId: string,
         options?: any
     ): Promise<null | ({
-        _id: string
+        _id: string;
     } & any)>;
     put(
         doc: any,
@@ -338,7 +338,7 @@ export declare class PouchDBInstance {
 
             //  I could not find out what this should be
             atts_since?: any;
-        }[],
+        }[];
         // Each returned revision body will include its revision history as a _revisions property. Default is false
         revs?: boolean;
         // what does this?
@@ -357,16 +357,16 @@ export declare class PouchDBInstance {
                     _revisions: {
                         ids: string[];
                         start: number;
-                    }
-                }
+                    };
+                };
                 error?: {
                     error: string;
                     id: string;
                     reason: string;
                     rev: string;
-                }
-            }[]
-        }[]
+                };
+            }[];
+        }[];
     }>;
 
     revsDiff(diff: any): Promise<any>;
@@ -379,9 +379,9 @@ export declare class PouchDBInstance {
             type: string;
             def: {
                 fields: {
-                    [key: string]: 'asc' | 'desc'
+                    [key: string]: 'asc' | 'desc';
                 }[];
-            }
+            };
         }[];
         total_rows: number;
     }>;

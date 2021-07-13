@@ -21,7 +21,7 @@ export type MigrationStrategies = {
 export interface OldRxCollection {
     version: number;
     schema: RxSchema;
-    storageInstance: RxStorageInstance<any, any, any>,
+    storageInstance: RxStorageInstance<any, any, any>;
     dataMigrator: DataMigrator;
     _crypter: Crypter;
     newestCollection: RxCollection;

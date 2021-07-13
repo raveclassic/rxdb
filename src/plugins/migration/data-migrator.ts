@@ -395,7 +395,7 @@ export function isDocumentDataWithoutRevisionEqual<T>(doc1: T, doc2: T): boolean
 export function _migrateDocument(
     oldCollection: OldRxCollection,
     docData: any
-): Promise<{ type: string, doc: {} }> {
+): Promise<{ type: string; doc: {} }> {
     const action = {
         res: null as any,
         type: '',

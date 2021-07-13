@@ -79,7 +79,7 @@ export function addCustomEventsPluginToPouch() {
     const oldBulkDocs: any = PouchDBCore.prototype.bulkDocs;
     const newBulkDocs = async function (
         this: PouchDBInstance,
-        body: any[] | { docs: any[], new_edits?: boolean },
+        body: any[] | { docs: any[]; new_edits?: boolean },
         options: PouchBulkDocOptions,
         callback: Function
     ) {

@@ -15,7 +15,7 @@ import { RxStorage } from './rx-storage.interface';
 import { PouchDBExpressServerOptions } from './plugins/server';
 
 export interface RxDatabaseCreator<Internals = any, InstanceCreationOptions = any> {
-    storage: RxStorage<Internals, InstanceCreationOptions>,
+    storage: RxStorage<Internals, InstanceCreationOptions>;
     instanceCreationOptions?: InstanceCreationOptions;
     name: string;
     password?: string | any;

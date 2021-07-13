@@ -1020,12 +1020,12 @@ export class RxStoragePouch implements RxStorage<PouchStorageInternals, PouchSet
 
 
 export async function writeAttachmentsToAttachments(
-    attachments: { [attachmentId: string]: RxAttachmentData | RxAttachmentWriteData; }
-): Promise<{ [attachmentId: string]: RxAttachmentData; }> {
+    attachments: { [attachmentId: string]: RxAttachmentData | RxAttachmentWriteData }
+): Promise<{ [attachmentId: string]: RxAttachmentData }> {
     if (!attachments) {
         return {};
     }
-    const ret: { [attachmentId: string]: RxAttachmentData; } = {};
+    const ret: { [attachmentId: string]: RxAttachmentData } = {};
     await Promise.all(
         Object.entries(attachments).map(async ([key, obj]) => {
             if (!obj.type) {
@@ -1131,7 +1131,7 @@ export function pouchDocumentDataToRxDocumentData<T>(
 export function rxDocumentDataToPouchDocumentData<T>(
     primaryKey: keyof T,
     doc: RxDocumentData<T> | RxDocumentWriteData<T>
-): WithAttachments<T & { _id: string; }> {
+): WithAttachments<T & { _id: string }> {
     let pouchDoc: WithAttachments<T> = pouchSwapPrimaryToId(primaryKey, doc);
 
     // always flat clone becaues we mutate the _attachments property.

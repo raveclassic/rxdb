@@ -799,7 +799,7 @@ config.parallel('rx-schema.test.js', () => {
     });
     describe('issues', () => {
         it('#590 Strange schema behavior with sub-sub-index', async () => {
-            const schema: RxJsonSchema<{ id: string, fileInfo: any }> = {
+            const schema: RxJsonSchema<{ id: string; fileInfo: any }> = {
                 version: 0,
                 primaryKey: 'id',
                 type: 'object',
@@ -853,7 +853,7 @@ config.parallel('rx-schema.test.js', () => {
             db.destroy();
         });
         it('#620 indexes should not be required', async () => {
-            const mySchema: RxJsonSchema<{ passportId: string, firstName: string; lastName: string; age: number; }> = {
+            const mySchema: RxJsonSchema<{ passportId: string; firstName: string; lastName: string; age: number }> = {
                 version: 0,
                 primaryKey: 'passportId',
                 type: 'object',
@@ -938,7 +938,7 @@ config.parallel('rx-schema.test.js', () => {
             db.destroy();
         });
         it('#697(2) should also work deep nested', async () => {
-            const mySchema: RxJsonSchema<{ id: string; properties: any; }> = {
+            const mySchema: RxJsonSchema<{ id: string; properties: any }> = {
                 version: 0,
                 type: 'object',
                 primaryKey: 'id',

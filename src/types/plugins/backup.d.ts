@@ -24,8 +24,8 @@ export type BackupMetaFileContent = {
         [collectionName: string]: {
             lastSequence: number;
             newestKnownSequence: number;
-        }
-    }
+        };
+    };
 }
 
 export type RxBackupWriteEvent = {

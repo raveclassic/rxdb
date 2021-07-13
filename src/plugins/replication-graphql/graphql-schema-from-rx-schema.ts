@@ -28,11 +28,11 @@ export type GraphQLSchemaFromRxSchemaInputSingleCollection = {
     ignoreOutputKeys?: string[];
     withRevisions?: boolean;
     prefixes?: Prefixes;
-    subscriptionParams?: { [k: string]: GraphQLParamType }
+    subscriptionParams?: { [k: string]: GraphQLParamType };
 };
 
 export type GraphQLSchemaFromRxSchemaInput = {
-    [collectionName: string]: GraphQLSchemaFromRxSchemaInputSingleCollection
+    [collectionName: string]: GraphQLSchemaFromRxSchemaInputSingleCollection;
 };
 export type GraphQLSchemaFromRxSchemaOutput = {
     asString: string;

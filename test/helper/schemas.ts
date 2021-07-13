@@ -1024,7 +1024,7 @@ export const humanWithTimestampAllIndex: RxJsonSchema<HumanWithTimestampDocument
     required: ['id', 'name', 'age', 'updatedAt']
 };
 
-export const humanWithSimpleAndCompoundIndexes: RxJsonSchema<{ id: string; name: string; age: number; createdAt: number; updatedAt: number; }> = {
+export const humanWithSimpleAndCompoundIndexes: RxJsonSchema<{ id: string; name: string; age: number; createdAt: number; updatedAt: number }> = {
     version: 0,
     primaryKey: 'id',
     type: 'object',
@@ -1094,7 +1094,7 @@ export const humanWithDeepNestedIndexes: RxJsonSchema<{ id: string; name: string
     indexes: ['name', 'job.name', 'job.manager.fullName', 'job.manager.previousJobs.[].name']
 };
 
-export const humanIdAndAgeIndex: RxJsonSchema<{ id: string; name: string; age: number; }> = {
+export const humanIdAndAgeIndex: RxJsonSchema<{ id: string; name: string; age: number }> = {
     version: 0,
     description: 'uses a compound index with id as lowest level',
     primaryKey: 'id',

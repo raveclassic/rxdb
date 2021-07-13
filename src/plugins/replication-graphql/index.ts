@@ -298,7 +298,7 @@ export class RxGraphQLReplicationState<RxDocType> {
             this.push.batchSize,
         );
 
-        const changesWithDocs: { doc: RxDocumentData<RxDocType>; sequence: number; }[] = (
+        const changesWithDocs: { doc: RxDocumentData<RxDocType>; sequence: number }[] = (
             await Promise.all(
                 Array.from(changesResult.changedDocs.values()).map(async (row) => {
                     let changedDoc = row.doc;

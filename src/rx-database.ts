@@ -208,7 +208,7 @@ export class RxDatabaseBase<
             Object.entries(collectionCreators).map(([name, args]) => {
                 const useName: keyof CreatedCollections = name as any;
                 const internalDoc = internalDocByCollectionName[_collectionNamePrimary(name, collectionCreators[useName].schema)];
-                const useArgs: RxCollectionCreator & { name: keyof CreatedCollections; } = flatClone(args) as any;
+                const useArgs: RxCollectionCreator & { name: keyof CreatedCollections } = flatClone(args) as any;
                 useArgs.name = useName;
                 const schema = createRxSchema((args as RxCollectionCreator).schema);
                 schemaHashByName[useName] = schema.hash;
@@ -234,7 +234,7 @@ export class RxDatabaseBase<
                 }
 
                 // run hooks
-                const hookData: RxCollectionCreator & { name: string; } = flatClone(args) as any;
+                const hookData: RxCollectionCreator & { name: string } = flatClone(args) as any;
                 (hookData as any).database = this;
                 hookData.name = name;
                 runPluginHooks('preCreateRxCollection', hookData);
@@ -570,8 +570,8 @@ async function createRxDatabaseStorageInstances<Internals, InstanceCreationOptio
     databaseName: string,
     options: InstanceCreationOptions
 ): Promise<{
-    internalStore: RxStorageInstance<InternalStoreDocumentData, Internals, InstanceCreationOptions>,
-    localDocumentsStore: RxStorageKeyObjectInstance<Internals, InstanceCreationOptions>
+    internalStore: RxStorageInstance<InternalStoreDocumentData, Internals, InstanceCreationOptions>;
+    localDocumentsStore: RxStorageKeyObjectInstance<Internals, InstanceCreationOptions>;
 }> {
     const internalStore = await storage.createStorageInstance<InternalStoreDocumentData>(
         {

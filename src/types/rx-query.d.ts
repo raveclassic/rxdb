@@ -45,7 +45,7 @@ export type MangoQuerySortPart<RxDocType = any> = {
 export type MangoQueryNoLimit<RxDocType = any> = {
     selector: MangoQuerySelector<RxDocType>;
     skip?: number;
-    sort?: MangoQuerySortPart<RxDocType>[]
+    sort?: MangoQuerySortPart<RxDocType>[];
 };
 
 export type MangoQuery<RxDocType = any> = MangoQueryNoLimit<RxDocType> & {

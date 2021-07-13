@@ -285,7 +285,7 @@ config.parallel('pouch-db-integration.test.js', () => {
                 docs
             }, bulkOptions);
 
-            let foundAfter = await pouch.find<{ firstName: string, _deleted: boolean }>({
+            let foundAfter = await pouch.find<{ firstName: string; _deleted: boolean }>({
                 selector: {}
             });
             assert.strictEqual(foundAfter.docs.length, 1);

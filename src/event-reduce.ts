@@ -11,11 +11,11 @@ import { runPluginHooks } from './hooks';
 import { rxChangeEventToEventReduceChangeEvent } from './rx-change-event';
 
 export type EventReduceResultNeg = {
-    runFullQueryAgain: true,
+    runFullQueryAgain: true;
 };
 export type EventReduceResultPos<RxDocumentType> = {
-    runFullQueryAgain: false,
-    changed: boolean,
+    runFullQueryAgain: false;
+    changed: boolean;
     newResults: RxDocumentType[];
 };
 export type EventReduceResult<RxDocumentType> = EventReduceResultNeg | EventReduceResultPos<RxDocumentType>;

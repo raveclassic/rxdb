@@ -13,8 +13,8 @@ import type {
 } from './types';
 
 export type RxChangeEventBroadcastChannelData = {
-    cE: RxChangeEvent<any>,
-    storageToken: string
+    cE: RxChangeEvent<any>;
+    storageToken: string;
 };
 
 export function getDocumentDataOfRxChangeEvent<T>(

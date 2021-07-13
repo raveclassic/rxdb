@@ -53,7 +53,7 @@ export async function getLastPushSequence(
     }
 }
 
-declare type CheckpointDoc = { _id: string; value: number; };
+declare type CheckpointDoc = { _id: string; value: number };
 
 export async function setLastPushSequence(
     collection: RxCollection,
