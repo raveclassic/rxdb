@@ -19,25 +19,25 @@ export type RxChangeEventBase = {
      */
     readonly startTime?: number;
     readonly endTime?: number;
-}
+};
 
 export type RxChangeEventInsert<DocType> = RxChangeEventBase & {
     operation: 'INSERT';
     documentData: DeepReadonly<DocType>;
     previousDocumentData: null;
-}
+};
 
 export type RxChangeEventUpdate<DocType> = RxChangeEventBase & {
     operation: 'UPDATE';
     documentData: DeepReadonly<DocType>;
     previousDocumentData: DeepReadonly<DocType> | 'UNKNOWN';
-}
+};
 
 export type RxChangeEventDelete<DocType> = RxChangeEventBase & {
     operation: 'DELETE';
     documentData: null;
     previousDocumentData: DeepReadonly<DocType> | 'UNKNOWN';
-}
+};
 
 // TODO remove =any
 export type RxChangeEvent<DocType = any> = RxChangeEventInsert<DocType> | RxChangeEventUpdate<DocType> | RxChangeEventDelete<DocType>;

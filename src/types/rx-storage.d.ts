@@ -39,7 +39,7 @@ export type RxDocumentData<T> = T & {
      * When you insert via overwrite: true, send the new revision you want to save the document with.
      */
     _rev: string;
-}
+};
 
 /**
  * The document data how it is send to the
@@ -99,7 +99,7 @@ export type BulkWriteRow<DocumentData> = {
 export type BulkWriteLocalRow<DocumentData> = {
     previous?: RxLocalDocumentData<DocumentData>,
     document: RxLocalDocumentData<DocumentData>
-}
+};
 
 /**
  * Data which is needed for new attachments
@@ -113,7 +113,7 @@ export type RxAttachmentWriteData = {
      * The data of the attachment.
      */
     data: BlobBuffer;
-}
+};
 
 /**
  * Meta data of the attachment how it comes out of the storage engine.
@@ -132,7 +132,7 @@ export type RxAttachmentData = {
      * Size of the attachments data
      */
     length: number;
-}
+};
 
 
 export type RxLocalDocumentData<
@@ -174,7 +174,7 @@ export type RxStorageBulkWriteError<RxDocType> = {
 
     // the original document data that should have been written.
     writeRow: BulkWriteRow<RxDocType>;
-}
+};
 
 export type RxStorageBulkWriteLocalError<D> = {
     status: number |
@@ -193,7 +193,7 @@ export type RxStorageBulkWriteLocalError<D> = {
 
     // the original document data that should have been written.
     writeRow: BulkWriteLocalRow<D>;
-}
+};
 
 export type RxStorageBulkWriteResponse<DocData> = {
     /**
@@ -207,7 +207,7 @@ export type RxStorageBulkWriteResponse<DocData> = {
      * contains all errored writes.
      */
     error: Map<string, RxStorageBulkWriteError<DocData>>;
-}
+};
 
 export type RxLocalStorageBulkWriteResponse<DocData> = {
     /**
@@ -221,7 +221,7 @@ export type RxLocalStorageBulkWriteResponse<DocData> = {
      * contains all errored writes.
      */
     error: Map<string, RxStorageBulkWriteLocalError<DocData>>;
-}
+};
 
 
 export type PreparedQuery<DocType> = MangoQuery<DocType> | any;
@@ -233,7 +233,7 @@ export type PreparedQuery<DocType> = MangoQuery<DocType> | any;
 export type RxStorageQueryResult<RxDocType> = {
     // the found documents, sort order is important.
     documents: RxDocumentData<RxDocType>[];
-}
+};
 
 
 
@@ -242,7 +242,7 @@ export type RxStorageInstanceCreationParams<DocumentData, InstanceCreationOption
     collectionName: string;
     schema: RxJsonSchema<DocumentData>;
     options: InstanceCreationOptions;
-}
+};
 
 export type ChangeStreamOptions = {
 
@@ -259,7 +259,7 @@ export type ChangeStreamOptions = {
      * limits the amount of results
      */
     limit?: number;
-}
+};
 
 export type ChangeStreamOnceOptions = ChangeStreamOptions & {
     /**
@@ -310,4 +310,4 @@ export type RxStorageChangeEvent<DocType> = {
      */
     startTime?: number;
     endTime?: number;
-}
+};

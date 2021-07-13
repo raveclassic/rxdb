@@ -33,7 +33,7 @@ export type RxCollectionCreator = {
     attachments?: KeyFunctionMap;
     options?: any;
     cacheReplacementPolicy?: RxCacheReplacementPolicy;
-}
+};
 
 export interface MigrationState {
     done: boolean; // true if finished

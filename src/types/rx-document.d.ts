@@ -89,4 +89,4 @@ declare type LocalDocWithType<LocalDocType> = RxDocumentBase<LocalDocType> & Loc
 export declare type RxLocalDocument<Parent, LocalDocType = any> = RxDocumentBase<LocalDocType> & LocalDocType & {
     readonly parent: Parent;
     isLocal(): true;
-}
+};

@@ -16,7 +16,7 @@ export type MigrationStrategy<DocData = any> = (
 
 export type MigrationStrategies = {
     [toVersion: number]: MigrationStrategy<any>;
-}
+};
 
 export interface OldRxCollection {
     version: number;

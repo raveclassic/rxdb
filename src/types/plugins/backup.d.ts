@@ -15,7 +15,7 @@ export type BackupOptions = {
      * If not set, all collections will be backed up.
      */
     collections?: string[];
-}
+};
 
 export type BackupMetaFileContent = {
     createdAt: number;
@@ -26,11 +26,11 @@ export type BackupMetaFileContent = {
             newestKnownSequence: number;
         }
     }
-}
+};
 
 export type RxBackupWriteEvent = {
     collectionName: string;
     documentId: string;
     files: string[];
     deleted: boolean;
-}
+};
