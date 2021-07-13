@@ -553,7 +553,7 @@ config.parallel('local-documents.test.js', () => {
                 storage: getRxStoragePouch('memory'),
             });
 
-            type DocData = { id: string; boudariesGrp: { bndrPlnId: string; bndrPlnNm: string; }[] };
+            type DocData = { id: string; boudariesGrp: { bndrPlnId: string; bndrPlnNm: string }[] };
             const boundaryMgmtSchema: RxJsonSchema<DocData> = {
                 version: 0,
                 type: 'object',

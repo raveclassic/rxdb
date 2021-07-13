@@ -971,7 +971,7 @@ config.parallel('rx-document.test.js', () => {
         it('#734 Invalid value persists in document after failed update', async () => {
             // create a schema
             const schemaEnum = ['A', 'B'];
-            const mySchema: RxJsonSchema<{ id: string, children: any[] }> = {
+            const mySchema: RxJsonSchema<{ id: string; children: any[] }> = {
                 version: 0,
                 primaryKey: 'id',
                 required: ['id'],

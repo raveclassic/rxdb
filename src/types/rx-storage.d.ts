@@ -25,7 +25,7 @@ export type RxDocumentData<T> = T & {
      */
     _attachments: {
         [attachmentId: string]: RxAttachmentData;
-    }
+    };
 
     /**
      * Contains a revision which is concated with a [height: number]-[identifier: string]
@@ -60,7 +60,7 @@ export type RxDocumentWriteData<T> = T & {
          * which came out of the storage instance.
          */
         [attachmentId: string]: RxAttachmentData | RxAttachmentWriteData;
-    }
+    };
 
     /**
      * Only set when overwrite: true
@@ -89,16 +89,16 @@ export type BulkWriteRow<DocumentData> = {
      * This will later allow us to use something different then the _rev key for conflict detection
      * when we implement other storage instances.
      */
-    previous?: RxDocumentData<DocumentData>,
+    previous?: RxDocumentData<DocumentData>;
     /**
      * The new document data to be stored in the storage instance.
      */
-    document: RxDocumentWriteData<DocumentData>
+    document: RxDocumentWriteData<DocumentData>;
 };
 
 export type BulkWriteLocalRow<DocumentData> = {
-    previous?: RxLocalDocumentData<DocumentData>,
-    document: RxLocalDocumentData<DocumentData>
+    previous?: RxLocalDocumentData<DocumentData>;
+    document: RxLocalDocumentData<DocumentData>;
 }
 
 /**
@@ -138,7 +138,7 @@ export type RxAttachmentData = {
 export type RxLocalDocumentData<
     Data = {
         // local documents are schemaless and contain any data
-        [key: string]: any
+        [key: string]: any;
     }
     > = {
         // Local documents always have _id as primary

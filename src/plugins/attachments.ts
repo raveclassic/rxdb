@@ -253,7 +253,7 @@ export function allAttachments(
 export async function preMigrateDocument<RxDocType>(
     data: {
         docData: RxDocumentData<RxDocType>;
-        oldCollection: OldRxCollection
+        oldCollection: OldRxCollection;
     }
 ): Promise<void> {
     const attachments = data.docData._attachments;

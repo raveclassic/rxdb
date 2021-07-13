@@ -33,7 +33,7 @@ addRxPlugin(RxDBDevModePlugin);
 
 addPouchPlugin(require('pouchdb-adapter-leveldb'));
 
-const schema: RxJsonSchema<{ passportId: string; firstName: string; lastName: string; }> = {
+const schema: RxJsonSchema<{ passportId: string; firstName: string; lastName: string }> = {
     title: 'human schema',
     description: 'describes a human being',
     version: 0,

@@ -41,7 +41,7 @@
         },
         "singleline": {
           "delimiter": "semi",
-          "requireLast": true
+          "requireLast": false
         }
       }
     ],
@@ -171,7 +171,6 @@
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/semi": "off",
     "no-trailing-spaces": "off",
-    "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/indent": "off",
     "brace-style": "off",
     "semi": "off",

@@ -15,7 +15,7 @@ export type RxPluginPreAddRxPluginArgs = {
     // the plugin that is getting added
     plugin: RxPlugin | any;
     // previous added plugins
-    plugins: Set<RxPlugin | any>
+    plugins: Set<RxPlugin | any>;
 }
 
 export interface RxPlugin {
@@ -34,42 +34,42 @@ export interface RxPlugin {
     readonly rxdb: true;
 
     prototypes?: {
-        RxSchema?: Function,
-        Crypter?: Function,
-        RxDocument?: Function,
-        RxQuery?: Function,
-        RxCollection?: Function,
-        RxDatabase?: Function
+        RxSchema?: Function;
+        Crypter?: Function;
+        RxDocument?: Function;
+        RxQuery?: Function;
+        RxCollection?: Function;
+        RxDatabase?: Function;
     };
     overwritable?: {
         isDevMode?: () => boolean;
-        deepFreezeWhenDevMode?: <T>(obj: T) => DeepReadonly<T>,
-        validatePassword?: Function,
-        checkAdapter?: Function,
-        tunnelErrorMessage?: Function
+        deepFreezeWhenDevMode?: <T>(obj: T) => DeepReadonly<T>;
+        validatePassword?: Function;
+        checkAdapter?: Function;
+        tunnelErrorMessage?: Function;
     };
     // TODO add typings to hook functions
     hooks?: {
-        preAddRxPlugin?: (args: RxPluginPreAddRxPluginArgs) => void,
-        preCreateRxDatabase?: Function,
-        createRxDatabase?: Function,
-        preDestroyRxDatabase?: Function,
-        createRxCollection?: Function,
-        preCreateRxCollection?: Function,
-        postDestroyRxCollection?: Function,
-        preCreateRxSchema?: Function,
-        createRxSchema?: Function,
-        preCreateRxQuery?: (data: RxPluginPreCreateRxQueryArgs) => void,
-        prePrepareQuery?: (i: { rxQuery: RxQuery<any>; mangoQuery: MangoQuery<any> }) => void,
+        preAddRxPlugin?: (args: RxPluginPreAddRxPluginArgs) => void;
+        preCreateRxDatabase?: Function;
+        createRxDatabase?: Function;
+        preDestroyRxDatabase?: Function;
+        createRxCollection?: Function;
+        preCreateRxCollection?: Function;
+        postDestroyRxCollection?: Function;
+        preCreateRxSchema?: Function;
+        createRxSchema?: Function;
+        preCreateRxQuery?: (data: RxPluginPreCreateRxQueryArgs) => void;
+        prePrepareQuery?: (i: { rxQuery: RxQuery<any>; mangoQuery: MangoQuery<any> }) => void;
         preQueryMatcher?: (i: { rxQuery: RxQuery<any>; doc: any }) => void;
-        preSortComparator?: (i: { rxQuery: RxQuery<any>; docA: any; docB: any; }) => void,
+        preSortComparator?: (i: { rxQuery: RxQuery<any>; docA: any; docB: any }) => void;
         preWriteToStorageInstance?: (i: { collection: RxCollection; doc: any }) => void;
-        postReadFromInstance?: (i: { collection: RxCollection, doc: any }) => void;
-        createRxQuery?: (query: RxQuery) => void,
-        createRxDocument?: Function,
-        postCreateRxDocument?: Function,
-        preCreateRxStorageInstance?: (params: RxStorageInstanceCreationParams<any, any>) => void,
-        preMigrateDocument?: Function,
-        postMigrateDocument?: Function
+        postReadFromInstance?: (i: { collection: RxCollection; doc: any }) => void;
+        createRxQuery?: (query: RxQuery) => void;
+        createRxDocument?: Function;
+        postCreateRxDocument?: Function;
+        preCreateRxStorageInstance?: (params: RxStorageInstanceCreationParams<any, any>) => void;
+        preMigrateDocument?: Function;
+        postMigrateDocument?: Function;
     };
 }

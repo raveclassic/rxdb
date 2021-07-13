@@ -221,15 +221,15 @@ export async function multipleOnSameDB(
     db: RxDatabase<{
         human: RxCollection<schemaObjects.HumanDocumentType>;
         human2: RxCollection<schemaObjects.HumanDocumentType>;
-    }>,
-    collection: RxCollection<schemaObjects.HumanDocumentType>
-    collection2: RxCollection<schemaObjects.HumanDocumentType>
+    }>;
+    collection: RxCollection<schemaObjects.HumanDocumentType>;
+    collection2: RxCollection<schemaObjects.HumanDocumentType>;
 }> {
     PouchDB.plugin(require('pouchdb-adapter-memory'));
 
     const db = await createRxDatabase<{
-        human: RxCollection<schemaObjects.HumanDocumentType>,
-        human2: RxCollection<schemaObjects.HumanDocumentType>
+        human: RxCollection<schemaObjects.HumanDocumentType>;
+        human2: RxCollection<schemaObjects.HumanDocumentType>;
     }>({
         name: randomCouchString(10),
         storage: getRxStoragePouch('memory'),

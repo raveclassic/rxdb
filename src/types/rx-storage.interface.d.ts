@@ -296,7 +296,7 @@ export interface RxStorageInstance<
         changedDocuments: {
             id: string;
             sequence: number;
-        }[],
+        }[];
         /**
          * The last sequence number is returned in a separate field
          * because the storage instance might have left out some events

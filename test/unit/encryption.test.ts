@@ -203,7 +203,7 @@ config.parallel('encryption.test.js', () => {
             await db2.destroy();
         });
         it('#917 Unexpected end of JSON input', async () => {
-            const schema: RxJsonSchema<{ name: string; color: string; happy: boolean; }> = {
+            const schema: RxJsonSchema<{ name: string; color: string; happy: boolean }> = {
                 title: 'hero schema',
                 description: 'describes a simple hero',
                 version: 0,

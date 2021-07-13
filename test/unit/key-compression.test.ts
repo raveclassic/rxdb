@@ -72,7 +72,7 @@ config.parallel('key-compression.test.js', () => {
     });
     describe('issues', () => {
         it('#50 compress string array properly', async () => {
-            const mySchema: RxJsonSchema<{ likes: any[], id: string }> = {
+            const mySchema: RxJsonSchema<{ likes: any[]; id: string }> = {
                 title: 'hero schema',
                 version: 0,
                 description: 'describes a simple hero',

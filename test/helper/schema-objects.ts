@@ -219,13 +219,13 @@ export interface EncryptedDeepHumanDocumentType {
     };
     deepSecret: {
         darkhole: {
-            pw: string
-        }
+            pw: string;
+        };
     };
     nestedSecret: {
         darkhole: {
             pw: string;
-        }
+        };
     };
 }
 export function encryptedDeepHumanDocumentType(): EncryptedDeepHumanDocumentType {
@@ -390,7 +390,7 @@ export type HumanWithCompositePrimary = {
     lastName: string;
     info: {
         age: number;
-    }
+    };
 };
 export function humanWithCompositePrimary(): HumanWithCompositePrimary {
     return {

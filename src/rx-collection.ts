@@ -388,8 +388,8 @@ export class RxCollectionBase<
     async bulkInsert(
         docsData: RxDocumentType[]
     ): Promise<{
-        success: RxDocument<RxDocumentType, OrmMethods>[],
-        error: RxStorageBulkWriteError<RxDocumentType>[]
+        success: RxDocument<RxDocumentType, OrmMethods>[];
+        error: RxStorageBulkWriteError<RxDocumentType>[];
     }> {
         const useDocs: RxDocumentType[] = docsData.map(docData => {
             const useDocData = fillObjectDataBeforeInsert(this as any, docData);
@@ -448,8 +448,8 @@ export class RxCollectionBase<
     async bulkRemove(
         ids: string[]
     ): Promise<{
-        success: RxDocument<RxDocumentType, OrmMethods>[],
-        error: RxStorageBulkWriteError<RxDocumentType>[]
+        success: RxDocument<RxDocumentType, OrmMethods>[];
+        error: RxStorageBulkWriteError<RxDocumentType>[];
     }> {
         const rxDocumentMap = await this.findByIds(ids);
         const docsData: RxDocumentData<RxDocumentType>[] = [];
@@ -922,7 +922,7 @@ function _atomicUpsertEnsureRxDocumentExists(
     rxCollection: RxCollection,
     primary: string,
     json: any
-): Promise<{ doc: RxDocument, inserted: boolean }> {
+): Promise<{ doc: RxDocument; inserted: boolean }> {
     /**
      * Optimisation shortcut,
      * first try to find the document in the doc-cache

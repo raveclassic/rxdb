@@ -676,7 +676,7 @@ config.parallel('rx-query.test.js', () => {
     describe('issues', () => {
         describe('#157 Cannot sort on field(s) "XXX" when using the default index', () => {
             it('schema example 1', async () => {
-                const schema: RxJsonSchema<{ user_id: string; user_pwd: string; last_login: number; status: string; }> = {
+                const schema: RxJsonSchema<{ user_id: string; user_pwd: string; last_login: number; status: string }> = {
                     keyCompression: false,
                     version: 0,
                     primaryKey: 'user_id',
@@ -731,7 +731,7 @@ config.parallel('rx-query.test.js', () => {
                 db.destroy();
             });
             it('schema example 2', async () => {
-                const schema: RxJsonSchema<{ id: string; value: number; }> = {
+                const schema: RxJsonSchema<{ id: string; value: number }> = {
                     keyCompression: false,
                     version: 0,
                     primaryKey: 'id',
@@ -917,7 +917,7 @@ config.parallel('rx-query.test.js', () => {
             db.destroy();
         });
         it('#609 default index on primaryKey when better possible', async () => {
-            const mySchema: RxJsonSchema<{ name: string; passportId: string; }> = {
+            const mySchema: RxJsonSchema<{ name: string; passportId: string }> = {
                 version: 0,
                 keyCompression: false,
                 primaryKey: 'name',

@@ -229,7 +229,7 @@ config.parallel('population.test.js', () => {
                     name: randomCouchString(10),
                     storage: getRxStoragePouch('memory'),
                 });
-                const schema: RxJsonSchema<{ name: string; }> = {
+                const schema: RxJsonSchema<{ name: string }> = {
                     version: 0,
                     primaryKey: 'name',
                     type: 'object',

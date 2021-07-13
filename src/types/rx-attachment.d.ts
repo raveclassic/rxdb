@@ -7,7 +7,7 @@ import { RxAttachmentWriteData } from './rx-storage';
 declare type Buffer = any;
 
 export type RxAttachmentCreator = RxAttachmentWriteData & {
-    id: string,
+    id: string;
 };
 
 export declare class RxAttachment<RxDocumentType, OrmMethods = {}> {

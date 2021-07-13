@@ -40,7 +40,7 @@ import {
 
 addRxPlugin(RxDBQueryBuilderPlugin);
 
-declare type TestDocType = { key: string; value: string; };
+declare type TestDocType = { key: string; value: string };
 
 config.parallel('rx-storage-pouchdb.test.js', () => {
     describe('custom events plugin', () => {
@@ -250,7 +250,7 @@ config.parallel('rx-storage-pouchdb.test.js', () => {
         });
         describe('.query()', () => {
             it('should find all documents', async () => {
-                const storageInstance = await getRxStoragePouch('memory').createStorageInstance<{ key: string; value: string; }>({
+                const storageInstance = await getRxStoragePouch('memory').createStorageInstance<{ key: string; value: string }>({
                     databaseName: randomCouchString(12),
                     collectionName: randomCouchString(12),
                     schema: getPseudoSchemaForVersion(0, 'key'),
