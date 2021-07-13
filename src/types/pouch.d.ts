@@ -131,7 +131,7 @@ export type PouchChangeRow = {
      * only if include_docs === true
      */
     doc?: PouchChangeDoc
-}
+};
 
 export type PouchAttachmentMeta = {
     digest: string;
@@ -160,7 +160,7 @@ export type PouchAttachmentWithData = PouchAttachmentMeta & {
      * because we have the full data and not only a stub.
      */
     stub?: false;
-}
+};
 
 export type PouchChangeDoc = {
     _id: string;
@@ -172,7 +172,7 @@ export type PouchChangeDoc = {
     _attachments: {
         [attachmentId: string]: PouchAttachmentMeta
     };
-}
+};
 
 export type WithAttachments<Data> = Data & {
     /**
@@ -183,7 +183,7 @@ export type WithAttachments<Data> = Data & {
     _attachments?: {
         [attachmentId: string]: PouchAttachmentMeta
     };
-}
+};
 export type WithAttachmentsData<Data> = Data & {
     /**
      * Intentional optional,
@@ -193,7 +193,7 @@ export type WithAttachmentsData<Data> = Data & {
     _attachments?: {
         [attachmentId: string]: PouchAttachmentWithData
     };
-}
+};
 
 
 export type WithPouchMeta<Data> = Data & {
@@ -202,12 +202,12 @@ export type WithPouchMeta<Data> = Data & {
         [attachmentId: string]: PouchAttachmentMeta
     };
     _deleted?: boolean;
-}
+};
 
 export type PouchdbChangesResult = {
     results: PouchChangeRow[];
     last_seq: number;
-}
+};
 
 declare type Debug = {
     enable(what: string): void;
@@ -226,7 +226,7 @@ export type PouchBulkDocResultRow = {
     ok: boolean;
     id: string;
     rev: string;
-}
+};
 
 export type PouchBulkDocOptions = {
     new_edits?: boolean;
@@ -235,7 +235,7 @@ export type PouchBulkDocOptions = {
     set_new_edit_as_latest_revision?: boolean;
     isDeeper?: boolean;
     custom?: any;
-}
+};
 
 export declare class PouchDBInstance {
     constructor(

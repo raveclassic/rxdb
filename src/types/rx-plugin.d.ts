@@ -3,20 +3,20 @@ import { RxCollection } from './rx-collection';
 import { RxStorageInstanceCreationParams } from './rx-storage';
 import type {
     DeepReadonly
-} from '../types'
+} from '../types';
 
 export type RxPluginPreCreateRxQueryArgs = {
     op: RxQueryOP;
     queryObj: MangoQuery;
     collection: RxCollection;
-}
+};
 
 export type RxPluginPreAddRxPluginArgs = {
     // the plugin that is getting added
     plugin: RxPlugin | any;
     // previous added plugins
     plugins: Set<RxPlugin | any>
-}
+};
 
 export interface RxPlugin {
     /**
